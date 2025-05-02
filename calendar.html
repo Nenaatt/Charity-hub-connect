@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Calendar Events</title>
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+  <link rel="stylesheet" href="../images/style.css" />
+  <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+  <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+  <script>
+    function navigateDropdown(value) {
+      if (value) {
+        window.location.href = value;
+      }
+    }
+  </script>
+  <style>
+    .calendar-container {
+      padding: 15px;
+    }
+
+    .calendar {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0;
+    }
+
+    .calendar td {
+      border: 1px solid #ccc;
+      width: 14.2%;
+      height: 60px;
+      text-align: center;
+      vertical-align: top;
+      padding: 5px;
+      background-color: #2f2f2f;
+      color: white;
+    }
+
+    .calendar td.event {
+      background-color: #444;
+      position: relative;
+    }
+
+    .calendar td span {
+      display: block;
+      margin-top: 5px;
+      font-size: 0.7em;
+      color: #0ff;
+    }
+
+    select {
+      margin: 15px;
+    }
+
+    /* Make the calendar responsive */
+    @media screen and (max-width: 600px) {
+      .calendar td {
+        width: 20%;
+        font-size: 0.8em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Dropdown -->
+<div data-role="page" id="main">
+  <div data-role="header">
+    <h1>Calendar Navigation</h1>
+  </div>
+  <div data-role="content">
+    <select id="nav-dropdown" onchange="navigateDropdown(this.value)">
+      <option value="">Navigate to...</option>
+      <option value="#calendar-past">Past Events</option>
+      <option value="#calendar-upcoming">Upcoming Events</option>
+      <option value="#calendar-volunteer">Volunteering Schedule</option>
+    </select>
+  </div>
+</div>
+
+<!-- Upcoming Events -->
+<div data-role="page" id="calendar-upcoming">
+  <div data-role="header">
+    <h1>Upcoming Events</h1>
+  </div>
+  <div data-role="content" class="calendar-container">
+    <h2>May</h2>
+    <table class="calendar">
+      <tr>
+        <td>1<br><span>Labour Day</span></td>
+        <td>2</td><td>3</td><td>4</td><td class="event">5<br><span>Charity Run</span></td><td>6</td><td>7</td>
+      </tr>
+      <tr>
+        <td>8</td><td>9</td><td>10</td><td>11</td><td class="event">12<br><span>Art Auction</span></td><td>13</td><td>14</td>
+      </tr>
+    </table>
+	<p><a href="index.html" data-ajax="false" data-role="button" data-theme="b">Back to Home</a></p>
+  </div>
+</div>
+
+<!-- Past Events -->
+<div data-role="page" id="calendar-past">
+  <div data-role="header">
+    <h1>Past Events</h1>
+  </div>
+  <div data-role="content" class="calendar-container">
+    <h2>April</h2>
+    <table class="calendar">
+      <tr>
+        <td>31<br><span>Hari Raya</span></td>
+        <td>1<br><span>Hari Raya</span></td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>7</td><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td>
+      </tr>
+      <tr>
+        <td>14</td><td>15</td><td>16</td><td>17</td>
+        <td class="event">18<br><span>Good Friday</span></td>
+        <td>19</td><td>20</td>
+      </tr>
+      <tr>
+        <td class="event">21<br><span>Easter Sunday</span></td><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td>
+      </tr>
+    </table>
+	<p><a href="index.html" data-ajax="false" data-role="button" data-theme="b">Back to Home</a></p>
+  </div>
+</div>
+
+<!-- Volunteering Schedule -->
+<div data-role="page" id="calendar-volunteer">
+  <div data-role="header">
+    <h1>Volunteering Schedule</h1>
+  </div>
+  <div data-role="content" class="calendar-container">
+    <h2>May</h2>
+    <table class="calendar">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+        <td class="event">3<br><span>Soup Kitchen</span></td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+      </tr>
+      <tr>
+        <td>8</td><td>9</td><td>10</td><td>11</td>
+        <td class="event">12<br><span>Beach Cleanup</span></td>
+        <td>13</td><td>14</td>
+      </tr>
+    </table>
+	<p><a href="index.html" data-ajax="false" data-role="button" data-theme="b">Back to Home</a></p>
+  </div>
+</div>
+</body>
+</html>
